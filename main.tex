@@ -1,29 +1,110 @@
-\documentclass[12pt,letterpaper]{article}
+\documentclass[12pt]{article}
 
-% PAQUETES
+% ==========================================
+% FORMATO, PAQUETES Y CONFIGURACIONES
+% ==========================================
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[x11names]{xcolor}
 \usepackage{graphicx}
-\usepackage[margin=2.54cm]{geometry}
-\usepackage{setspace}
-\doublespacing
-\usepackage{times}
-\setlength{\parindent}{1.27cm}
+\usepackage{placeins}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[most]{tcolorbox}
+\usepackage[margin=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{parskip}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
 
+% Colores
+\definecolor{golden} {RGB} {140,23,26}
+\definecolor{goldford}{RGB}{69,59,41}
+\definecolor{rojo} {RGB} {140,23,26}
+\definecolor{azulFisi} {RGB} {0,75,141}
+\definecolor{azulclaro} {RGB} {38,125,199}
+\definecolor{rojoRN} {RGB} {190,0,0}
+\definecolor{teoricabg} {RGB} {255,250,230}
+\definecolor{teoricaborder} {RGB} {200,150,0}
+\definecolor{transformbg} {RGB} {240,248,255}
+\definecolor{transformborder} {RGB} {0,75,141}
+\definecolor{esquemabg} {RGB} {245,255,245}
+\definecolor{esquemaborder} {RGB} {0,130,80}
 
+\tcbuselibrary{listings, skins,breakable}
+
+% Cajas personalizadas
+\newtcolorbox{teorica}{
+    colback=teoricabg,
+    colframe=teoricaborder,
+    arc=4pt,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    breakable,
+}
+
+\newtcolorbox{transformacion}{
+    colback=transformbg,
+    colframe=transformborder,
+    arc=4pt,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    breakable,
+}
+
+\newtcolorbox{esquema}{
+    colback=esquemabg,
+    colframe=esquemaborder,
+    arc=4pt,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    breakable,
+}
+
+% Formato de Títulos y Subtítulos (Estos armarán el índice automáticamente)
+\titleformat{\section}
+    {\color{azulFisi}\normalfont\Large\bfseries}
+    {\thesection.}{0.5em}{\MakeUppercase}[\titleline{\color{azulFisi}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+    {\color{azulFisi}\normalfont\large\bfseries}
+    {\thesubsection.} {0.5em}{}
+
+\newcommand{\celdaAzul}[1]{\cellcolor{azulclaro}\color{white}\textbf{#1}}
+
+\hypersetup{linkcolor=black,colorlinks=true}
+
+% ==========================================
+% INICIO DEL DOCUMENTO Y ESTRUCTURA
+% ==========================================
 \begin{document}
 
-% LLAMADA A LOS SUBARCHIVOS
-\input{partes/Carátula_índice}
-\input{partes/Introducción}
-\input{partes/Andrea}
-\input{partes/Saúl}
-\input{partes/Diana}
-\input{partes/Isabel}
-\input{partes/Conclusiones}
+% 1. Portada
+\input{partes/Carátula_índice.tex}
 
-% BIBLIOGRAFÍA
-%\bibliographystyle{apalike} % estilo visual de las referencias
-%\bibliography{referencias}  % Llama a referencias.bib
+% 2. Índice (Se genera solo basándose en los \section y \subsection)
+\newpage
+\tableofcontents
+\newpage
+
+% 3. Contenido separado por archivos
+\input{partes/introducción.tex}
+\input{partes/Andrea.tex}
+\input{partes/Saúl.tex}
+\input{partes/Diana.tex}
+\input{partes/Isabel.tex}
+%\input{partes/Conclusiones.tex}
 
 \end{document}
