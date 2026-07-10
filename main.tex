@@ -28,7 +28,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{xparse}
 
-% PAQUETES NUEVOS PARA APA 7
+% PAQUETES PARA APA 7
 \usepackage{setspace} % Para el interlineado doble
 \usepackage{indentfirst} % Para aplicar sangría al primer párrafo de cada sección
 
@@ -48,8 +48,7 @@
 
 \tcbuselibrary{listings, skins, breakable}
 
-% Cajas personalizadas (Se mantienen definidas por si las necesitas, 
-% aunque APA 7 prioriza tablas y figuras estándar)
+% Cajas personalizadas 
 \newtcolorbox{teorica}{
     colback=teoricabg,
     colframe=teoricaborder,
@@ -93,7 +92,7 @@
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
 
-% 1. Portada (Asegúrate de que tu archivo se llame Carátula_índice.tex o portada.tex según corresponda)
+% 1. Portada 
 \input{partes/Carátula_índice.tex}
 
 % 2. Índice
@@ -115,7 +114,7 @@
 \setlength{\parindent}{1.27cm}
 
 % 1. Alineación y formato de los títulos usando titlesec
-% Nivel 1 (\section): CENTRADO y SIN NÚMERO
+% Nivel 1 (\section): 
 \titleformat{\section}
     {\color{black}\normalfont\Large\bfseries\centering} % Añadimos \centering
     {} % Dejamos este espacio vacío para ocultar el número (antes decía \thesection.)
@@ -123,7 +122,7 @@
     {}
 \titlespacing{\section}{0pt}{12pt}{6pt} 
 
-% Nivel 2 (\subsection): Alineado a la izquierda, Negrita, CON NÚMERO
+% Nivel 2 (\subsection): 
 \titleformat{\subsection}
     {\color{black}\normalfont\large\bfseries}
     {\thesubsection.} % Mantiene el número (ej. 2.1.)
@@ -131,7 +130,7 @@
     {}
 \titlespacing{\subsection}{1.27cm}{12pt}{6pt} % 1.27cm de sangría
 
-% Nivel 3 (\subsubsection): Alineado a la izquierda, Negrita, CON NÚMERO
+% Nivel 3 (\subsubsection): 
 \titleformat{\subsubsection}
     {\color{black}\normalfont\normalsize\bfseries}
     {\thesubsubsection.} % Mantiene el número (ej. 2.1.1.)
